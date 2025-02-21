@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashvin Ganesh - Web Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Portfolio</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero container">
+            <div class="hero-content">
+                <h1>Ashvin Ganesh</h1>
+                <p class="subtitle">Web Developer & AI Researcher</p>
+                <a href="#contact" class="cta-button">Get in Touch</a>
+            </div>
+        </section>
+    
+        <div class="content-wrapper">
+            <section id="about" class="container">
+                <h2>About Me</h2>
+                <p>I'm a passionate web developer with expertise in creating responsive and user-friendly websites. My expertise includes front-end and back-end development, with a strong focus on modern JavaScript frameworks.</p>
+                <p>I'm also passionate about ML and Chess Engines.</p>
+                <p> </p>
+            </section>
+
+            <section id="skills" class="container">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill">HTML5</div>
+                    <div class="skill">CSS3</div>
+                    <div class="skill">JavaScript</div>
+                    <div class="skill">React</div>
+                    <div class="skill">Node.js</div>
+                    <div class="skill">Python</div>
+                    <div class="skill">C/C++</div>
+                    <div class="skill">Git/Github</div>
+                    <div class="skill">Machine Learning</div>
+                </div>
+            </section>
+
+            <section id="projects" class="container">
+                <h2>Projects</h2>
+                <div class="project-grid">
+                    <div class="project">
+                        <h3>Magic Bitboard based Chess Engine</h3>
+                        <p>Developed a chess engine using C and the magic bitboard representation for efficient move generation and evaluation.</p>
+                        <p>Used PV search , transposition tables , LMR , MVV-LVA , iterative Deepening with alpha-beta pruning to optimize performance and accuracy.</p>
+                    </div>
+                    <div class="project">
+                        <h3>Student Attendence System using Computer Vision</h3>
+                        <p>Used Haar Cascades to detect multiple faces in a Video Capture using Webcam</p>
+                        <p>Implemented a Denoising-GAN for image augumentation to reduce noise and improve the accuracy of the faces being processed as intended</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="container">
+                <h2>Experience</h2>
+                <div class="experience-grid">
+                    <div class="experience-item">
+                        <h3>Driverless Team Member</h3>
+                        <p class="company">Formula Manipal, MIT</p>
+                        <p class="date">October 2022 – December 2023</p>
+                        <ul>
+                            <li>Collaborated as a vital member of the Controls and Path Planning Subsystem, spearheading the implementation of
+                                the PID-Stanley Controller.</li>
+                            <li>Innovated by integrating Delaunay’s Triangulation and Mapping algorithms seamlessly with the PID-Stanley Controller,
+                                enhancing the autonomy and navigation capabilities of the system.</li>
+                            <li>Attempted to implement MPCC algorithm, demonstrating proactive problem-solving and a willingness to engage
+                                with complex technical challenges.</li>
+                            <li>Created Low-level Actuator codes using PID controlled in Arduino for Break-by-Wire and Drive-by-Wire systems
+                                    that take input from the High-level Controls.</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <h3>AI Research Memberr</h3>
+                        <p class="company">Cryptonite, MIT</p>
+                        <p class="date">Semptember 2024 – Present</p>
+                        <ul>
+                            <li>exploring Lie Detection using
+                                AI strategies with a focus on trying to make a multi-modal model combining video , audio and text modalities to
+                                improve accuracy.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="container">
+                <h2>Contact Me</h2>
+                <form id="contactForm">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

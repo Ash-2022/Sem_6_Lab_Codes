@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPTCHA Verification</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        #captcha-image {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            font-size: 30px;
+            letter-spacing: 5px;
+            font-style: italic;
+            font-weight: bold;
+            color: #0066cc;
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 5px;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">CAPTCHA Verification</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="captcha-image" class="mb-3"></div>
+                <button id="refresh-captcha" class="btn btn-secondary mb-3">Refresh CAPTCHA</button>
+                <form id="captcha-form">
+                    <div class="form-group">
+                        <label for="captcha-input">Enter CAPTCHA:</label>
+                        <input type="text" id="captcha-input" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <div id="message" class="mt-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            let captchaText = '';
+            let attempts = 0;
+
+            function generateCaptcha() {
+                const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789';
+                captchaText = '';
+                for (let i = 0; i < 6; i++) {
+                    captchaText += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                $('#captcha-image').text(captchaText);
+            }
+
+            generateCaptcha();
+
+            $('#refresh-captcha').click(function() {
+                generateCaptcha();
+            });
+
+            $('#captcha-form').submit(function(e) {
+                e.preventDefault();
+                const userInput = $('#captcha-input').val();
+
+                if (userInput === captchaText) {
+                    $('#message').html('<div class="alert alert-success">CAPTCHA matched successfully!</div>');
+                    attempts = 0;
+                } else {
+                    attempts++;
+                    if (attempts >= 3) {
+                        $('#captcha-input').prop('disabled', true);
+                        $('#message').html('<div class="alert alert-danger">CAPTCHA mismatch. You\'ve exceeded the maximum number of attempts. The input has been disabled.</div>');
+                    } else {
+                        $('#message').html('<div class="alert alert-danger">CAPTCHA mismatch. Please try again.</div>');
+                    }
+                }
+
+                $('#captcha-input').val('');
+                generateCaptcha();
+            });
+        });
+    </script>
+</body>
+</html>

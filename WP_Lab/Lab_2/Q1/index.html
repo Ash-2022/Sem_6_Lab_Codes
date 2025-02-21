@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Bill Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Product Bill Generator</h1>
+        <form id="billForm">
+            <div class="form-group">
+                <label for="brand">Select Brand:</label>
+                <select id="brand" required>
+                    <option value="">--Select--</option>
+                    <option value="HP">HP</option>
+                    <option value="Nokia">Nokia</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Motorola">Motorola</option>
+                    <option value="Apple">Apple</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Product Type:</label>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="productType" value="Mobile"> Mobile
+                    </label>
+                    <label>
+                        <input type="checkbox" name="productType" value="Laptop"> Laptop
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" min="1" required>
+            </div>
+            <button type="button" id="produceBill">Produce Bill</button>
+        </form>
+        <div id="billOutput"></div>
+    </div>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

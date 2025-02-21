@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Train Ticket Booking Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <script src="script.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="booking-form">
+        <h2 class="form-title">Train Ticket Booking</h2>
+        <form id="bookingForm">
+          <!-- From Station -->
+          <div class="form-group">
+            <label for="fromStation">From Station</label>
+            <input type="text" class="form-control" id="fromStation" placeholder="Enter departure station" required>
+          </div>
+          <!-- To Station -->
+          <div class="form-group">
+            <label for="toStation">To Station</label>
+            <input type="text" class="form-control" id="toStation" placeholder="Enter destination station" required>
+          </div>
+          <!-- Date Picker -->
+          <div class="form-group">
+            <label for="travelDate">Travel Date</label>
+            <input type="date" class="form-control" id="travelDate" required>
+          </div>
+          <!-- Class Selection -->
+          <div class="form-group">
+            <label for="class">Class</label>
+            <select class="form-control" id="class" required>
+              <option value="">Select Class</option>
+              <option value="economy">1st Class</option>
+              <option value="business">Sleeper</option>
+              <option value="first">General</option>
+            </select>
+          </div>
+          <!-- Number of Passengers -->
+          <div class="form-group">
+            <label for="passengers">Number of Passengers</label>
+            <input type="number" class="form-control" id="passengers" min="1" max="10" required>
+          </div>
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-book btn-block">Book Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

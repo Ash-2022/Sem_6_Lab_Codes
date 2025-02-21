@@ -1,0 +1,9 @@
+{% extends 'bookapp/base.html' %}
+
+{% block content %}
+<h1>Metadata</h1>
+<p>Author: John Doe</p>
+<p>Genre: Fiction</p>
+<p>Published: 2023</p>
+<a href="{% url 'home' %}" class="btn btn-secondary">Back to Home</a>
+{% endblock %}
