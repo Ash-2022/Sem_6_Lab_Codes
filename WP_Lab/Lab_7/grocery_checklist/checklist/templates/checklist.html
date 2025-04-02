@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Checklist Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .table {
+            border: 2px solid #dee2e6;
+        }
+        .table th, .table td {
+            border: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Grocery Checklist Generator</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Available Items</h2>
+                <form id="grocery-form">
+                    {% for item in items %}
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="{{ item.id }}" id="item{{ item.id }}">
+                        <label class="form-check-label" for="item{{ item.id }}">
+                            {{ item.name }} - ${{ item.price }}
+                        </label>
+                    </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary mt-3">Add Item</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h2>Selected Items</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="selected-items">
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Total</th>
+                            <td id="total-price">$0.00</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            let total = 0;
+
+            $('#grocery-form').submit(function(e) {
+                e.preventDefault();
+                let selectedItems = $('input[type=checkbox]:checked');
+                
+                selectedItems.each(function() {
+                    let itemId = $(this).val();
+                    $.ajax({
+                        url: '/add_item/',
+                        method: 'POST',
+                        data: {
+                            'item_id': itemId,
+                            'csrfmiddlewaretoken': '{{ csrf_token }}'
+                        },
+                        success: function(response) {
+                            $('#selected-items').append(`
+                                <tr>
+                                    <td>${response.name}</td>
+                                    <td>$${response.price.toFixed(2)}</td>
+                                </tr>
+                            `);
+                            total += response.price;
+                            $('#total-price').text('$' + total.toFixed(2));
+                        }
+                    });
+                    $(this).prop('checked', false);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

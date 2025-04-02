@@ -1,0 +1,55 @@
+/* institutes_app/static/institutes_app/css/style.css */
+/* Add these styles to your existing CSS file */
+
+.institute-name {
+    color: #3a3a3a;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.badge-info {
+    background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+}
+
+.institute-details {
+    margin-top: 2rem;
+}
+
+.detail-card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.detail-card h5 {
+    color: #007bff;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.detail-card p {
+    font-size: 1.2rem;
+    color: #495057;
+    margin-bottom: 0;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(78, 115, 223, 0.4);
+}

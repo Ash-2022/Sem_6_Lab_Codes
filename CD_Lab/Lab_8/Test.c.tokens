@@ -1,0 +1,73 @@
+<identifier, main, 1, 0>
+<seperator, (, 1, 4>
+<seperator, ), 1, 5>
+<seperator, {, 1, 7>
+<keyword, int, 2, 4>
+<identifier, x, 2, 8>
+<seperator, ,, 2, 9>
+<identifier, y, 2, 11>
+<seperator, ,, 2, 12>
+<identifier, z, 2, 14>
+<seperator, ;, 2, 15>
+<keyword, char, 3, 4>
+<identifier, c, 3, 9>
+<seperator, ;, 3, 10>
+<identifier, x, 5, 4>
+<seperator, =, 5, 6>
+<number, 10, 5, 8>
+<seperator, ;, 5, 10>
+<identifier, y, 6, 4>
+<seperator, =, 6, 6>
+<number, 20, 6, 8>
+<seperator, ;, 6, 10>
+<identifier, z, 7, 4>
+<seperator, =, 7, 6>
+<identifier, x, 7, 8>
+<arithmetic, +, 7, 10>
+<identifier, y, 7, 12>
+<arithmetic, *, 7, 14>
+<number, 5, 7, 16>
+<seperator, ;, 7, 17>
+<keyword, if, 9, 4>
+<seperator, (, 9, 7>
+<identifier, z, 9, 8>
+<relop, >, 9, 10>
+<number, 100, 9, 12>
+<seperator, ), 9, 15>
+<seperator, {, 9, 17>
+<identifier, x, 10, 8>
+<seperator, =, 10, 10>
+<number, 1, 10, 12>
+<seperator, ;, 10, 13>
+<identifier, y, 11, 8>
+<seperator, =, 11, 10>
+<number, 2, 11, 12>
+<seperator, ;, 11, 13>
+<seperator, }, 12, 4>
+<keyword, else, 12, 6>
+<seperator, {, 12, 11>
+<identifier, x, 13, 8>
+<seperator, =, 13, 10>
+<number, 3, 13, 12>
+<seperator, ;, 13, 13>
+<identifier, y, 14, 8>
+<seperator, =, 14, 10>
+<number, 4, 14, 12>
+<seperator, ;, 14, 13>
+<seperator, }, 15, 4>
+<identifier, c, 17, 4>
+<seperator, =, 17, 6>
+<literal, 'A', 17, 8>
+<seperator, ;, 17, 11>
+<seperator, }, 18, 0>
+
+--- SYMBOL TABLE ---
+IDENTIFIER           TYPE            LINE      
+-----------------------------------------------------
+c                    identifier      3         
+x                    identifier      2         
+y                    identifier      2         
+z                    identifier      2         
+main                 identifier      1         
+-----------------------------------------------------
+Total symbols: 5

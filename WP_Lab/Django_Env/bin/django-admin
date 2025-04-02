@@ -1,4 +1,4 @@
-#!/home/ashvin/WP_Lab/Django_Env/bin/python3
+#!/home/ashvin/Sem_6_Lab_Codes/WP_Lab/Django_Env/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

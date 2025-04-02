@@ -1,4 +1,3 @@
-// script.js
 $(document).ready(function() {
     const ball = $('.ball');
     const container = $('.container');
